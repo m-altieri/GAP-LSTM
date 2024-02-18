@@ -20,4 +20,4 @@ src/scripts/*
 !src/scripts/*.py
 *old*
 *terry*
-spatial_ac
+*tfevents*
