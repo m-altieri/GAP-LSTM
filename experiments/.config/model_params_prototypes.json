@@ -1,0 +1,90 @@
+{
+    "_default": {
+        "checkpoint": false,
+        "lr_scheduler": false,
+        "lrs_monitor": "loss",
+        "lrs_factor": 0.1,
+        "lrs_patience": 5,
+        "early_stopping": false,
+        "es_monitor": "loss",
+        "es_patience": 5,
+        "es_restore": false,
+        "single_node": false,
+        "batch_size": 2,
+        "epochs": 50,
+        "learning_rate": 0.01,
+        "optimizer": "adam",
+        "loss": "mae",
+        "adj_type": "closeness",
+        "gnn_type": "spektral",
+        "dynamic_adj": false
+    },
+    "GraphWaveNet": {
+        "name": "GraphWaveNet"
+    },
+    "ARIMA": {
+        "name": "ARIMA",
+        "single_node": true
+    },
+    "VAR": {
+        "name": "VAR",
+        "order": 1
+    },
+    "Prophet": {
+        "name": "Prophet",
+        "single_node": true
+    },
+    "LSTM": {
+        "name": "LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "GRU": {
+        "name": "GRU",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "Bi-LSTM": {
+        "name": "Bi-LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "Attention-LSTM": {
+        "name": "Attention-LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "CNN-LSTM": {
+        "name": "CNN-LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "SVD-LSTM": {
+        "name": "SVD-LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "GCN-LSTM": {
+        "name": "GCN-LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01
+    },
+    "GCLSTM": {
+        "name": "GCLSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01,
+        "lr_scheduler": false,
+        "early_stopping": false,
+        "single_node": true,
+        "adj_type": "corr",
+        "dynamic_adj": true
+    },
+    "GAP-LSTM": {
+        "name": "GAP-LSTM",
+        "batch_size": 2,
+        "learning_rate": 0.01,
+        "conv": true,
+        "attention": true,
+        "cell_type": "gclstm"
+    }
+}

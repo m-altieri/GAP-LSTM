@@ -2,7 +2,7 @@ __pycache__/
 backup_experiments/
 data/*/*.npz
 experiments/*
-!experiments/config
+!experiments/.config
 #!experiments/neuro
 #!experiments/neuro/*
 log/*

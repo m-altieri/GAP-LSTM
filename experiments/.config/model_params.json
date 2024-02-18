@@ -1,0 +1,6607 @@
+﻿{
+  "default": {
+    "checkpoint": false,
+    "lr_scheduler": false,
+    "lrs_monitor": "loss",
+    "lrs_factor": 0.1,
+    "lrs_patience": 5,
+    "early_stopping": false,
+    "es_monitor": "loss",
+    "es_patience": 5,
+    "es_restore": false,
+    "save_attention_weights": false,
+    "single_node": false,
+    "batch_size": 2,
+    "epochs": 50,
+    "learning_rate": 0.01,
+    "optimizer": "adam",
+    "loss": "mae",
+    "adj_type": "closeness",
+    "gcn": "spektral",
+    "dynamic_adj": false
+  },
+  "models": [
+    {
+      "name": "GraphWaveNet",
+      "alias": "GraphWaveNet"
+    },
+    {
+      "name": "ARIMA-AUTO",
+      "alias": "ARIMA",
+      "single_node": true
+    },
+    {
+      "name": "Prophet-Prophet",
+      "alias": "Prophet",
+      "single_node": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-2",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "LSTM-BS4LR1e-2",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "LSTM-BS8LR1e-2",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "LSTM-BS16LR1e-2",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "LSTM-BS2LR1e-3",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "LSTM-BS4LR1e-3",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "LSTM-BS8LR1e-3",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "LSTM-BS16LR1e-3",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "LSTM-BS2LR1e-4",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "LSTM-BS4LR1e-4",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "LSTM-BS8LR1e-4",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "LSTM-BS16LR1e-4",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "LSTM-BS2LR1e-2LRS",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-2LRS",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-2LRS",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-2LRS",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-3LRS",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-3LRS",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-3LRS",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-3LRS",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-4LRS",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-4LRS",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-4LRS",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-4LRS",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-2ES",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-2ES",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-2ES",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-2ES",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-3ES",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-3ES",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-3ES",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-3ES",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-4ES",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-4ES",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-4ES",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-4ES",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-2LRSES",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-2LRSES",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-2LRSES",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-2LRSES",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-3LRSES",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-3LRSES",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-3LRSES",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-3LRSES",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS2LR1e-4LRSES",
+      "alias": "LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS4LR1e-4LRSES",
+      "alias": "LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS8LR1e-4LRSES",
+      "alias": "LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "LSTM-BS16LR1e-4LRSES",
+      "alias": "LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS2LR1e-2",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GRU-BS4LR1e-2",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GRU-BS8LR1e-2",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GRU-BS16LR1e-2",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GRU-BS2LR1e-3",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GRU-BS4LR1e-3",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GRU-BS8LR1e-3",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GRU-BS16LR1e-3",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GRU-BS2LR1e-4",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GRU-BS4LR1e-4",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GRU-BS8LR1e-4",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GRU-BS16LR1e-4",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GRU-BS2LR1e-2LRS",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS4LR1e-2LRS",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS8LR1e-2LRS",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS16LR1e-2LRS",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS2LR1e-3LRS",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS4LR1e-3LRS",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS8LR1e-3LRS",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS16LR1e-3LRS",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS2LR1e-4LRS",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS4LR1e-4LRS",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS8LR1e-4LRS",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS16LR1e-4LRS",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GRU-BS2LR1e-2ES",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS4LR1e-2ES",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS8LR1e-2ES",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS16LR1e-2ES",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS2LR1e-3ES",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS4LR1e-3ES",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS8LR1e-3ES",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS16LR1e-3ES",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS2LR1e-4ES",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS4LR1e-4ES",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS8LR1e-4ES",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS16LR1e-4ES",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS2LR1e-2LRSES",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS4LR1e-2LRSES",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS8LR1e-2LRSES",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS16LR1e-2LRSES",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS2LR1e-3LRSES",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS4LR1e-3LRSES",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS8LR1e-3LRSES",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS16LR1e-3LRSES",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS2LR1e-4LRSES",
+      "alias": "GRU",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS4LR1e-4LRSES",
+      "alias": "GRU",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS8LR1e-4LRSES",
+      "alias": "GRU",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GRU-BS16LR1e-4LRSES",
+      "alias": "GRU",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-2",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-2",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-2",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-2",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-3",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-3",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-3",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-3",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-4",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-4",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-4",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-4",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-2LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-2LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-2LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-2LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-3LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-3LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-3LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-3LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-4LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-4LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-4LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-4LRS",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-2ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-2ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-2ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-2ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-3ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-3ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-3ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-3ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-4ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-4ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-4ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-4ES",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-2LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-2LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-2LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-2LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-3LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-3LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-3LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-3LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS2LR1e-4LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS4LR1e-4LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS8LR1e-4LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Bi-LSTM-BS16LR1e-4LRSES",
+      "alias": "Bi-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-2",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-2",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-2",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-2",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-3",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-3",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-3",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-3",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-4",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-4",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-4",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-4",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-2LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-2LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-2LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-2LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-3LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-3LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-3LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-3LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-4LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-4LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-4LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-4LRS",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-2ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-2ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-2ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-2ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-3ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-3ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-3ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-3ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-4ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-4ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-4ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-4ES",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-2LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-2LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-2LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-2LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-3LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-3LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-3LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-3LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS2LR1e-4LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS4LR1e-4LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS8LR1e-4LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "Attention-LSTM-BS16LR1e-4LRSES",
+      "alias": "Attention-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-2",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-2",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-2",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-2",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-3",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-3",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-3",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-3",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-4",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-4",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-4",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-4",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-2LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-2LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-2LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-2LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-3LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-3LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-3LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-3LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-4LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-4LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-4LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-4LRS",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-2ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-2ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-2ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-2ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-3ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-3ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-3ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-3ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-4ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-4ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-4ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-4ES",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-2LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-2LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-2LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-2LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-3LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-3LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-3LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-3LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS2LR1e-4LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS4LR1e-4LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS8LR1e-4LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "CNN-LSTM-BS16LR1e-4LRSES",
+      "alias": "CNN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-2",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-2",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-2",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-2",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-3",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-3",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-3",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-3",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-4",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-4",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-4",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-4",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-2LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-2LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-2LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-2LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-3LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-3LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-3LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-3LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-4LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-4LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-4LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-4LRS",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-2ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-2ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-2ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-2ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-3ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-3ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-3ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-3ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-4ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-4ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-4ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-4ES",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-2LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-2LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-2LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-2LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-3LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-3LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-3LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-3LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS2LR1e-4LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS4LR1e-4LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS8LR1e-4LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "SVD-LSTM-BS16LR1e-4LRSES",
+      "alias": "SVD-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-2",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-2",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-2",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-2",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-3",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-3",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-3",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-3",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-4",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-4",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-4",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-4",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-2LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-2LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-2LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-2LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-3LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-3LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-3LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-3LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-4LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-4LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-4LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-4LRS",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-2ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-2ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-2ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-2ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-3ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-3ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-3ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-3ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-4ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-4ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-4ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-4ES",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-2LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-2LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-2LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-2LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-3LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-3LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-3LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-3LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS2LR1e-4LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS4LR1e-4LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS8LR1e-4LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GCN-LSTM-BS16LR1e-4LRSES",
+      "alias": "GCN-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-2",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-2",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-2",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-2",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-3",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-3",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-3",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-3",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-4",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-4",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-4",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-4",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS2LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS4LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS8LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-BS16LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-2",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-2",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-2",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-2",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-3",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-3",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-3",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-3",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-4",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-4",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-4",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-4",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-2LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-3LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-4LRS",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-2ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-3ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-4ES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-2LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-3LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS2LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS4LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS8LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-weighted-BS16LR1e-4LRSES",
+      "alias": "GAP-LSTM",
+      "gcn": "weighted",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "VAR-O1",
+      "alias": "VAR",
+      "order": 1
+    },
+    {
+      "name": "VAR-O2",
+      "alias": "VAR",
+      "order": 2
+    },
+    {
+      "name": "VAR-O3",
+      "alias": "VAR",
+      "order": 3
+    },
+    {
+      "name": "VAR-O4",
+      "alias": "VAR",
+      "order": 4
+    },
+    {
+      "name": "VAR-O5",
+      "alias": "VAR",
+      "order": 5
+    },
+    {
+      "name": "VAR-O6",
+      "alias": "VAR",
+      "order": 6
+    },
+    {
+      "name": "VAR-O7",
+      "alias": "VAR",
+      "order": 7
+    },
+    {
+      "name": "VAR-O8",
+      "alias": "VAR",
+      "order": 8
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-2",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-2",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-2",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-2",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-3",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-3",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-3",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-3",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-4",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-4",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-4",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-4",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-2LRS",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-2LRS",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-2LRS",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-2LRS",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-3LRS",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-3LRS",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-3LRS",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-3LRS",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-4LRS",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-4LRS",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-4LRS",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-4LRS",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-2ES",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-2ES",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-2ES",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-2ES",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-3ES",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-3ES",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-3ES",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-3ES",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-4ES",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-4ES",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-4ES",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-4ES",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-2LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-2LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-2LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-2LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-3LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-3LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-3LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-3LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS2LR1e-4LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS4LR1e-4LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS8LR1e-4LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-BS16LR1e-4LRSES",
+      "alias": "GCLSTM",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-2",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-2",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-2",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-2",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-3",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-3",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-3",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-3",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-4",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-4",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-4",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-4",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-2LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-2LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-2LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-2LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-3LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-3LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-3LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-3LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-4LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-4LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-4LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-4LRS",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-2ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-2ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-2ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-2ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-3ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-3ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-3ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-3ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-4ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-4ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-4ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-4ES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-2LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-2LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-2LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-2LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-3LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-3LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-3LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-3LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS2LR1e-4LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS4LR1e-4LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS8LR1e-4LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-noconv-BS16LR1e-4LRSES",
+      "alias": "GCLSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-2",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-2",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-2",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-2",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-3",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-3",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-3",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-3",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-4",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-4",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-4",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-4",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-2LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-2LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-2LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-2LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-3LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-3LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-3LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-3LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-4LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-4LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-4LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-4LRS",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-2ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-2ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-2ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-2ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-3ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-3ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-3ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-3ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-4ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-4ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-4ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-4ES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-2LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-2LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-2LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-2LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-3LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-3LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-3LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-3LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS2LR1e-4LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS4LR1e-4LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS8LR1e-4LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-closeness-BS16LR1e-4LRSES",
+      "alias": "GCLSTM-closeness",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "closeness",
+      "dynamic_adj": false
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-2",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-2",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-2",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-2",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-3",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-3",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-3",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-3",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-4",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-4",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-4",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-4",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-2LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-2LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-2LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-2LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-3LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-3LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-3LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-3LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-4LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-4LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-4LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-4LRS",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": false,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-2ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-2ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-2ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-2ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-3ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-3ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-3ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-3ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-4ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-4ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-4ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-4ES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": false,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-2LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-2LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-2LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-2LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-3LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-3LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-3LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-3LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS2LR1e-4LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS4LR1e-4LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS8LR1e-4LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GCLSTM-nosummary-BS16LR1e-4LRSES",
+      "alias": "GCLSTM-nosummary",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true,
+      "single_node": true,
+      "adj_type": "corr",
+      "dynamic_adj": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-2",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-2",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-2",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-2",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-3",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-3",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-3",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-3",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-4",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-4",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-4",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-4",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-2LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-2LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-2LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-2LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-3LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-3LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-3LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-3LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-4LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-4LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-4LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-4LRS",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-2ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-2ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-2ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-2ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-3ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-3ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-3ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-3ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-4ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-4ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-4ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-4ES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-2LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-2LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-2LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-2LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-3LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-3LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-3LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-3LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS2LR1e-4LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS4LR1e-4LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS8LR1e-4LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noconv-BS16LR1e-4LRSES",
+      "alias": "GAP-LSTM-noconv",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-2",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-2",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-2",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-2",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-3",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-3",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-3",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-3",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-4",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-4",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-4",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-4",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-2LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-2LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-2LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-2LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-3LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-3LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-3LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-3LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-4LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-4LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-4LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-4LRS",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-2ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-2ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-2ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-2ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-3ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-3ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-3ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-3ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-4ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-4ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-4ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-4ES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-2LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-2LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-2LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-2LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-3LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-3LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-3LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-3LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS2LR1e-4LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS4LR1e-4LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS8LR1e-4LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-noattention-BS16LR1e-4LRSES",
+      "alias": "GAP-LSTM-noattention",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-2",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-2",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-2",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-2",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-3",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-3",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-3",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-3",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-4",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-4",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-4",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-4",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-2LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-2LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-2LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-2LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-3LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-3LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-3LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-3LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-4LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-4LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-4LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-4LRS",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-2ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-2ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-2ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-2ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-3ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-3ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-3ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-3ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-4ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-4ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-4ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-4ES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-2LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-2LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-2LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-2LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-3LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-3LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-3LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-3LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS2LR1e-4LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS4LR1e-4LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS8LR1e-4LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-nomemorystate-BS16LR1e-4LRSES",
+      "alias": "GAP-LSTM-nomemorystate",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-2",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-2",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-2",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-2",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.01
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-3",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-3",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-3",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-3",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-4",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-4",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-4",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-4",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.0001
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-2LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-2LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-2LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-2LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-3LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-3LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-3LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-3LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-4LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-4LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-4LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-4LRS",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-2ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-2ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-2ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-2ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-3ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-3ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-3ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-3ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-4ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-4ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-4ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-4ES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-2LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-2LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-2LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-2LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.01,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-3LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-3LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-3LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-3LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS2LR1e-4LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 2,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS4LR1e-4LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 4,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS8LR1e-4LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 8,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    },
+    {
+      "name": "GAP-LSTM-lstm-BS16LR1e-4LRSES",
+      "alias": "GAP-LSTM-lstm",
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "lr_scheduler": true,
+      "early_stopping": true
+    }
+  ]
+}
