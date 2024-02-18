@@ -1,0 +1,4 @@
+,metrics,S2S-GCLSTM-AT-nomemorystate-BS4LR1e-4
+0,mae,0.026973
+1,rmse,0.044623
+2,smape,0.760057

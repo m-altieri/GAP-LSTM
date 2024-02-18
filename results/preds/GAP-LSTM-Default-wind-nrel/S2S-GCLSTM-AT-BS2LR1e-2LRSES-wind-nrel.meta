@@ -1,0 +1,15 @@
+Time: 1652615484
+Model name: S2S-GCLSTM-AT-BS2LR1e-2LRSES
+Dataset: wind-nrel
+Mini-dataset mode: False
+Num of features: 8
+Allow partial batches: True
+History steps: 24
+Prediction steps: 24
+Stride: 24
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: reduceLROnPlateau; Factor=0.1, Patience=5, cooldown=0
+Evaluation mode: landmark
+Training time (seconds): 11626

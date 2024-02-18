@@ -1,0 +1,14 @@
+Time: 1650976551
+Model name: SVD-LSTM-BS8LR1e-3
+Dataset: pems-sf-weather
+Mini-dataset mode: False
+Num of features: 16
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 8
+Epochs: 50
+Learning rate: 0.001
+Learning rate scheduler: off
+Training time (seconds): 255

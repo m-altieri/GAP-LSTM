@@ -1,0 +1,14 @@
+Time: 1674051349
+Model name: ESG
+Dataset: pems-sf-weather
+Mini-dataset mode: False
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 4
+Epochs: 50
+Learning rate: 1e-05
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 1457

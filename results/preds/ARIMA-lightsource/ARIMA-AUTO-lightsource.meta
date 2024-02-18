@@ -1,0 +1,120 @@
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374
+Time: 1654641815
+Model name: ARIMA-AUTO
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 2
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4374

@@ -1,0 +1,14 @@
+Time: 1650460871
+Model name: Bi-LSTM-BS4LR1e-3
+Dataset: pems-sf-weather
+Mini-dataset mode: False
+Num of features: 16
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 4
+Epochs: 50
+Learning rate: 0.001
+Learning rate scheduler: off
+Training time (seconds): 96

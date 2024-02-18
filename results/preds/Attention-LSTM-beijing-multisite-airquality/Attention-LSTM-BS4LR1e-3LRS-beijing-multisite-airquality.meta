@@ -1,0 +1,14 @@
+Time: 1650463789
+Model name: Attention-LSTM-BS4LR1e-3LRS
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 4
+Epochs: 50
+Learning rate: 0.001
+Learning rate scheduler: reduceLROnPlateau; Factor=0.1, Patience=5, cooldown=0
+Training time (seconds): 309

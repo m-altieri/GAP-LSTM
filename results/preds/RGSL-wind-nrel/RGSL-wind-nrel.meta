@@ -1,0 +1,14 @@
+Time: 1673988310
+Model name: RGSL
+Dataset: wind-nrel
+Mini-dataset mode: False
+Allow partial batches: True
+History steps: 24
+Prediction steps: 24
+Stride: 24
+Batch size: 4
+Epochs: 50
+Learning rate: 0.0001
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 4626

@@ -1,0 +1,75 @@
+Time: 1653805524
+Model name: S2S-GCLSTM-AT-noattention-BS8LR1e-2ES
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 8
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 685
+Time: 1653867889
+Model name: S2S-GCLSTM-AT-noattention-BS8LR1e-2ES
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 8
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 689
+Time: 1653869154
+Model name: S2S-GCLSTM-AT-noattention-BS8LR1e-2ES
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 8
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 675
+Time: 1653877283
+Model name: S2S-GCLSTM-AT-noattention-BS8LR1e-2ES
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 8
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 690
+Time: 1653878437
+Model name: S2S-GCLSTM-AT-noattention-BS8LR1e-2ES
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 8
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 664

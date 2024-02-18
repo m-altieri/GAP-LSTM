@@ -1,0 +1,4 @@
+,metrics,CNN-LSTM-BS2LR1e-2LRSES
+0,mae,0.029481
+1,rmse,0.046076
+2,smape,0.575738

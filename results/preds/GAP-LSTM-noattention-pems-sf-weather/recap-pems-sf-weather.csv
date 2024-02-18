@@ -1,0 +1,4 @@
+,metrics,S2S-GCLSTM-AT-noattention-BS4LR1e-3
+0,mae,0.029328
+1,rmse,0.045658
+2,smape,1.508869

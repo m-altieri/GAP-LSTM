@@ -1,0 +1,14 @@
+Time: 1650469620
+Model name: S2S-GCLSTM-AT-BS4LR1e-2ES
+Dataset: beijing-multisite-airquality
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 6
+Prediction steps: 6
+Stride: 6
+Batch size: 4
+Epochs: 50
+Learning rate: 0.01
+Learning rate scheduler: off
+Training time (seconds): 2963

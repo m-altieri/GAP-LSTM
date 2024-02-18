@@ -1,0 +1,4 @@
+,metrics,LSTM-BS2LR1e-4ES
+0,mae,0.274035
+1,rmse,0.376674
+2,smape,0.985244

@@ -1,0 +1,14 @@
+Time: 1650460888
+Model name: Bi-LSTM-BS4LR1e-3
+Dataset: lightsource
+Mini-dataset mode: False
+Num of features: 11
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 4
+Epochs: 50
+Learning rate: 0.001
+Learning rate scheduler: off
+Training time (seconds): 219
