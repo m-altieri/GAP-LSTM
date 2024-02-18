@@ -1,0 +1,4 @@
+,metrics,S2S-GCLSTM-AT-noconv-BS2LR1e-2LRSES
+0,mae,0.300274
+1,rmse,0.389232
+2,smape,1.33065

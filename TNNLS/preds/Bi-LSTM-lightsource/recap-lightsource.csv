@@ -1,0 +1,4 @@
+,metrics,Bi-LSTM-BS4LR1e-3
+0,mae,0.083369
+1,rmse,0.139548
+2,smape,1.026062

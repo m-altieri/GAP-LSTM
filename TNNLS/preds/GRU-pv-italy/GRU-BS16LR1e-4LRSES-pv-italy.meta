@@ -1,0 +1,14 @@
+Time: 1650457807
+Model name: GRU-BS16LR1e-4LRSES
+Dataset: pv-italy
+Mini-dataset mode: False
+Num of features: 12
+Allow partial batches: True
+History steps: 19
+Prediction steps: 19
+Stride: 19
+Batch size: 16
+Epochs: 50
+Learning rate: 0.0001
+Learning rate scheduler: reduceLROnPlateau; Factor=0.1, Patience=5, cooldown=0
+Training time (seconds): 92

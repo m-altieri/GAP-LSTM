@@ -1,0 +1,14 @@
+Time: 1673985491
+Model name: Triformer
+Dataset: wind-nrel
+Mini-dataset mode: False
+Allow partial batches: True
+History steps: 24
+Prediction steps: 24
+Stride: 24
+Batch size: 8
+Epochs: 50
+Learning rate: 1e-05
+Learning rate scheduler: off
+Evaluation mode: landmark
+Training time (seconds): 767
