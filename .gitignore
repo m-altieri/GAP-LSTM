@@ -6,8 +6,6 @@ experiments/*
 #!experiments/neuro
 #!experiments/neuro/*
 log/*
-results/
-results/attw/
 saved_models
 src/explainer
 src/lib/__pycache__/
@@ -20,3 +18,6 @@ src/run_all.bat
 src/backup_run_all.bat
 src/scripts/*
 !src/scripts/*.py
+*old*
+*terry*
+spatial_ac
