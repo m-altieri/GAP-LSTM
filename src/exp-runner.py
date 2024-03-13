@@ -88,7 +88,7 @@ def parse_args():
         "-d",
         "--prediction-seqs",
         action="store",
-        choices=["test", "val"],
+        choices=["test", "val", "late"],
         default="test",
         help="choose the file containing prediction sequence indexes that you want to use",
     )
@@ -255,9 +255,10 @@ def create_timeseries(
         train_indexes = np.setdiff1d(perm, test_indexes, assume_unique=True)
 
     elif experiment_params["test_seqs_source"] == "file":
-        test_indexes = (
-            np.load(test_file_path) - dataset_params["h"] // dataset_params["stride"]
-        )  # l'indice è da quando parte
+        test_indexes = np.load(test_file_path)
+        # test_indexes = (
+        #     np.load(test_file_path) - dataset_params["h"] // dataset_params["stride"]
+        # )  # l'indice è da quando parte
 
         test_indexes = [index for index in test_indexes if index < sequences]
         train_indexes = np.setdiff1d(
@@ -547,7 +548,6 @@ def train_and_predict(
             )
 
             pred = model.predict(np.expand_dims(testX[i], 0), batch_size=1)
-            print(model.summary())
             preds.append(pred)
 
             last_index = index
@@ -556,13 +556,14 @@ def train_and_predict(
             saved_models_path = os.path.join(
                 experiment_params["path"],
                 "saved_models",
+                f"{model_params['name']}-{dataset_params['name']}",
             )
             if not os.path.exists(saved_models_path):
                 os.makedirs(saved_models_path)
             model.save_weights(
                 os.path.join(
                     saved_models_path,
-                    f"{model_params['name']}-{dataset_params['name']}-{i}.h5",
+                    f"{index}.h5",
                 )
             )
 
@@ -1041,20 +1042,18 @@ class ExperimentRunner:
         )
 
         # Load test seqs
-        self.experiment_params["pred_seqs_file_suffix"] = (
-            self.experiment_params["test_file_suffix"]
-            if self.experiment_params["prediction_seqs"] == "test"
-            else self.experiment_params["val_file_suffix"]
-        )
-        test_file_path = os.path.join(
-            self.path,
-            "data",
-            dataset_name,
-            dataset_name
-            + "_"
-            + self.experiment_params["pred_seqs_file_suffix"]
-            + ".npy",
-        )
+        # self.experiment_params["pred_seqs_file_suffix"] = (
+        #     self.experiment_params["test_file_suffix"]
+        #     if self.experiment_params["prediction_seqs"] == "test"
+        #     else self.experiment_params["val_file_suffix"]
+        # )
+        test_dates_path = os.path.join(self.path, "data", dataset_name, "test_dates")
+        test_file_name = {
+            "test": f"{dataset_name}_{self.experiment_params['test_file_suffix']}.npy",
+            "val": f"{dataset_name}_{self.experiment_params['val_file_suffix']}.npy",
+            "late": f"{dataset_name}-10-m0.5.npy",
+        }[self.experiment_params["prediction_seqs"]]
+        test_file_path = os.path.join(test_dates_path, test_file_name)
 
         # Prepare adj
         adj_file_path = os.path.join(
