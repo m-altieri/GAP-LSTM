@@ -556,7 +556,7 @@ def train_and_predict(
             saved_models_path = os.path.join(
                 experiment_params["path"],
                 "saved_models",
-                f"{model_params['name']}-{dataset_params['name']}",
+                f"{model_params['name']}-{dataset_params['name']}-{experiment_params['run_name']}",
             )
             if not os.path.exists(saved_models_path):
                 os.makedirs(saved_models_path)
@@ -1120,10 +1120,13 @@ class ExperimentRunner:
                 print("Loop iteration started")
 
                 # Se --distributed, devo runnare solo sui nodi di competenza di questo worker
-                if not self.conf.distributed or n % hvd.size() == hvd.rank():
+                if (
+                    not self.experiment_params.get("distributed")
+                    or n % hvd.size() == hvd.rank()
+                ):
                     print("Starting training for node " + str(n))
                     model = build_model(
-                        self.experiment_params, model_params, dataset_params
+                        self.experiment_params, model_params, dataset_params, adj=adj
                     )
                     print("Model built")
 
@@ -1147,7 +1150,7 @@ class ExperimentRunner:
                     multipreds.append(preds)
                     np.save(f"{preds_path}-{n}.npy", preds)
                     if (
-                        self.conf.distributed and hvd.rank() != 0
+                        self.experiment_params.get("distributed") and hvd.rank() != 0
                     ):  # Se è un worker, deve mandare il file al master
                         file = f"{preds_path}-{n}.npy"  # @TODO è brutto hardcoded
                         print(

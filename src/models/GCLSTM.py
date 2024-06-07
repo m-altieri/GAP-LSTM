@@ -7,15 +7,16 @@ GCLSTM-ones: usa una matrice di adiacenza con tutti 1
 GCLSTM-nosummary: usa solo la prima feature statistica anzichè tutte e 7
 GCLSTM-noskip: salta la skip connection
 """
+
+import sys
+import scipy
+import logging
+import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers import *
-import numpy as np
-import scipy
-import sys
-import logging
 
-sys.path.append("/lustrehome/altieri/research/src")
-sys.path.append("/lustrehome/altieri/research/src/lib")
+# sys.path.append("/lustrehome/altieri/research/src")
+# sys.path.append("/lustrehome/altieri/research/src/lib")
 sys.path.append("../lib")
 from lib.spektral_utilities import *
 from lib.spektral_gcn import GraphConv
@@ -36,37 +37,46 @@ class GCLSTM(tf.keras.Model):
         self.N = N
         self.node = node
 
-        self.gcn1 = GraphConv(32, activation="relu")
-        self.gcn2 = GraphConv(16, activation="relu")
+        self.gcn1 = GraphConv(32, activation="relu", name="gcn1")
+        self.gcn2 = GraphConv(16, activation="relu", name="gcn2")
 
-        self.conv1 = Conv1D(4, (3), padding="same", data_format="channels_first")  # 1d
-        self.conv2 = Conv1D(4, (3), padding="same", data_format="channels_first")  # 1d
+        self.conv1 = Conv1D(
+            4, (3), padding="same", data_format="channels_first", name="conv1"
+        )  # 1d
+        self.conv2 = Conv1D(
+            4, (3), padding="same", data_format="channels_first", name="conv2"
+        )  # 1d
 
         # self.bn = tf.keras.layers.BatchNormalization(axis=1)
 
         self.pooling = AveragePooling1D(
-            (2), padding="same", data_format="channels_first"
+            (2), padding="same", data_format="channels_first", name="pooling"
         )  # 1d
 
-        self.lstm1 = LSTM(128, return_sequences=True)
-        self.lstm2 = LSTM(128)
+        self.lstm1 = LSTM(128, return_sequences=True, name="lstm1")
+        self.lstm2 = LSTM(128, name="lstm2")
 
-        self.dropout = Dropout(0.5)
-        self.out = Dense(P)
+        self.dropout = Dropout(0.5, name="dropout")
+        self.out = Dense(P, name="out")
 
         self.ablation = ablation
         self.gcnmaps = tf.Variable(
-            initial_value=tf.zeros([0, N, 16]), trainable=False, shape=[None, N, 16]
+            initial_value=tf.zeros([0, N, 16]),
+            trainable=False,
+            shape=[None, N, 16],
+            name="gcnmaps",
         )
         self.convmaps = tf.Variable(
             initial_value=tf.zeros([0, 4, N, 16]),
             trainable=False,
             shape=[None, 4, N, 16],
+            name="convmaps",
         )
         self.summaries = tf.Variable(
             initial_value=tf.zeros([0, N, 1 if self.ablation == "nosummary" else 7]),
             trainable=False,
             shape=[None, N, 1 if self.ablation == "nosummary" else 7],
+            name="summaries",
         )
 
     def get_interpretation(self):

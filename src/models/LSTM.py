@@ -2,13 +2,12 @@
 """LSTM
 """
 
-import tensorflow as tf
-import keras.layers
-import numpy as np
+import os
 import logging
+import numpy as np
+import tensorflow as tf
 import pytftk.autocorrelation
 import matplotlib.pyplot as plt
-import os
 
 
 class LSTM(tf.keras.Model):
